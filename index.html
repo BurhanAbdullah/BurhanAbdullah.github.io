@@ -3,205 +3,225 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Burhan U Din Abdullah | Renewable Energy & AI Expert</title>
+  <title>Burhan U Din Abdullah | Postdoctoral Researcher</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
   <style>
+    :root {
+      --bg: #020617;
+      --fg: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, #020617, #020617);
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #38bdf8;
-    }
-
-    header p {
-      max-width: 900px;
-      margin: auto;
-      font-size: 1.2rem;
-      color: #cbd5f5;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      padding: 90px 20px;
+      max-width: 1050px;
       margin: auto;
     }
 
-    h2 {
-      color: #38bdf8;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #1e293b;
-      padding-bottom: 8px;
+    h1, h2, h3 {
+      color: var(--accent);
+      font-weight: 600;
     }
 
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 4vw, 3.6rem);
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    /* TAGS */
+    .tags span {
+      display: inline-block;
+      margin: 6px 8px 0 0;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid #1e293b;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: #020617;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(56,189,248,0.1);
+      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
+      padding: 24px;
+      transition: transform .3s ease, box-shadow .3s ease;
     }
 
-    .card h3 {
-      color: #7dd3fc;
-      margin-top: 0;
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(56,189,248,.15);
     }
 
-    ul {
-      padding-left: 20px;
+    /* TIMELINE */
+    .timeline {
+      border-left: 2px solid var(--accent);
+      padding-left: 25px;
     }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #020617;
-      color: #94a3b8;
+    .event {
+      margin-bottom: 35px;
+      opacity: 0;
+      transform: translateY(20px);
     }
 
+    /* LINKS */
     a {
-      color: #38bdf8;
+      color: var(--accent);
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    footer {
+      background: #020617;
+      padding: 40px;
+      text-align: center;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Burhan U Din Abdullah</h1>
-  <p>
-    A renewable energy expert & AI/ML innovator dedicated to powering a sustainable future
-    through intelligent energy systems, smart grids, and advanced microgrid solutions.
-  </p>
-</header>
-
-<section>
-  <h2>About Me</h2>
-  <p>
-    Hi, I’m Burhan Abdullah. With over seven years of experience in AI-driven microgrids
-    and CleanTech innovation, I work at the intersection of renewable energy,
-    machine learning, and smart grid technologies.
-  </p>
-  <p>
-    My expertise lies in designing intelligent microgrid architectures, optimizing
-    renewable energy integration using AI/ML, and developing advanced power electronics
-    solutions. My vision is to accelerate the global transition toward resilient,
-    scalable, and sustainable energy infrastructure.
-  </p>
-</section>
-
-<section>
-  <h2>Core Expertise</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>AI/ML Optimization</h3>
-      <p>Advanced predictive analytics and machine learning for energy demand forecasting and system optimization.</p>
-    </div>
-    <div class="card">
-      <h3>Microgrid Architecture</h3>
-      <p>Design and deployment of resilient, scalable, decentralized power networks.</p>
-    </div>
-    <div class="card">
-      <h3>Solar PV Systems</h3>
-      <p>High-efficiency PV and hybrid energy systems for grid-connected and off-grid applications.</p>
-    </div>
-    <div class="card">
-      <h3>Power Quality Enhancement</h3>
-      <p>Converter and inverter technologies for stable, future-ready smart grids.</p>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Burhan U Din Abdullah</h1>
+    <p class="subtitle">
+      Postdoctoral Researcher · Renewable Energy Systems · AI-Driven Smart Grids
+    </p>
+    <div class="tags">
+      <span>Microgrids</span>
+      <span>AI / ML</span>
+      <span>Energy Management</span>
+      <span>Solar PV</span>
+      <span>Power Electronics</span>
     </div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section>
-  <h2>Professional Experience</h2>
-  <ul>
-    <li><strong>Associate Researcher</strong> – Indian Institute of Science (IISc), Nov 2025 – Present</li>
-    <li><strong>Business Development Manager</strong> – Helium Four Solar Pvt Ltd, Feb 2025 – Oct 2025</li>
-    <li><strong>Consultant Business Development</strong> – Aress Software, Dec 2016 – Nov 2017</li>
-    <li><strong>Business Development Executive</strong> – Aress Software, Dec 2015 – Aug 2016</li>
-    <li><strong>Internship Trainee</strong> – J&K Power Development Department, Feb 2014 – May 2014</li>
-  </ul>
+  <h2>Research Profile</h2>
+  <p>
+    I am a researcher in renewable energy and intelligent power systems with over
+    seven years of experience spanning AI-driven microgrids, smart grid optimization,
+    and advanced photovoltaic systems. My research focuses on integrating machine
+    learning into energy management to enhance resilience, efficiency, and scalability
+    of modern power infrastructures.
+  </p>
+  <p>
+    I am actively seeking postdoctoral opportunities and collaborative research
+    projects in energy systems, AI-enabled grids, and sustainable power technologies.
+  </p>
 </section>
 
+<!-- RESEARCH -->
 <section>
-  <h2>Education</h2>
-  <ul>
-    <li><strong>PhD</strong> – Electrical & Electronics Engineering, Sharda University (2021–2025)</li>
-    <li><strong>M.Tech</strong> – Power Systems, J.C. Bose University of Science & Technology (2018–2020)</li>
-    <li><strong>B.Tech</strong> – Electrical & Renewable Energy Engineering, BGSBU (2011–2015)</li>
-  </ul>
+  <h2>Research Interests</h2>
+  <div class="grid">
+    <div class="card">AI-Based Energy Management & Forecasting</div>
+    <div class="card">Microgrid Control & Optimization</div>
+    <div class="card">PV Systems & MPPT Algorithms</div>
+    <div class="card">Smart Grids & Power Quality</div>
+  </div>
 </section>
 
+<!-- PUBLICATIONS -->
 <section>
-  <h2>Publications & Research</h2>
+  <h2>Selected Publications</h2>
   <ul>
-    <li>Performance & Reliability Investigation of PV-Integrated Microgrids</li>
-    <li>Application of AI in MPPT for Solar PV Systems</li>
+    <li>Performance and Reliability Investigation of PV-Integrated Microgrids</li>
+    <li>Application of Artificial Intelligence in MPPT for Solar PV Systems</li>
     <li>Hybrid Artificial Ecosystem Optimizer for Grid-Connected PV</li>
-    <li>Hybrid MPPT Control using Pelican Optimization Algorithm</li>
+    <li>Hybrid MPPT Control Using Pelican Optimization Algorithm</li>
     <li>Comparative Analysis of Regression Models for PV Power Forecasting</li>
   </ul>
 </section>
 
+<!-- EXPERIENCE -->
 <section>
-  <h2>Certifications</h2>
-  <ul>
-    <li>McKinsey.org Forward Program – McKinsey & Company (2025)</li>
-    <li>Internet of Things – IIT Bombay (2025)</li>
-    <li>Strategy & Game Theory – IIM Ahmedabad (2025)</li>
-    <li>Electric Power Systems – University at Buffalo (2024)</li>
-  </ul>
+  <h2>Academic & Professional Experience</h2>
+  <div class="timeline">
+    <div class="event">Associate Researcher – Indian Institute of Science (2025–Present)</div>
+    <div class="event">Business Development Manager – Helium Four Solar Pvt Ltd (2025)</div>
+    <div class="event">Consultant – Aress Software (2016–2017)</div>
+  </div>
 </section>
 
+<!-- EDUCATION -->
 <section>
-  <h2>Thought Leadership</h2>
-  <p>
-    <strong>Environmental Planning & Kashmir’s Future</strong> – Greater Kashmir  
-    <br />
-    <a href="https://lnkd.in/g5pewqpi" target="_blank">Read Article</a>
-  </p>
-  <p>
-    <strong>Redefining Merit & Success</strong> – Greater Kashmir  
-    <br />
-    <a href="https://lnkd.in/g45Rg-Jc" target="_blank">Read Article</a>
-  </p>
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="event">PhD – Electrical & Electronics Engineering, Sharda University</div>
+    <div class="event">M.Tech – Power Systems, J.C. Bose University</div>
+    <div class="event">B.Tech – Electrical & Renewable Energy Engineering</div>
+  </div>
 </section>
 
+<!-- CONTACT -->
 <section>
-  <h2>Get In Touch</h2>
+  <h2>Contact & Collaboration</h2>
   <p>
-    I am open to postdoctoral positions, research collaborations, speaking engagements,
-    consulting opportunities, and partnerships in renewable energy and AI-driven systems.
+    I welcome inquiries regarding postdoctoral positions, funded research projects,
+    joint proposals, and academic collaborations.
   </p>
   <p>
-    📧 Email / LinkedIn / GitHub – Let’s connect.
+    🔗 <a href="https://github.com/BurhanAbdullah" target="_blank">GitHub</a> |
+    📧 Email available upon request
   </p>
 </section>
 
 <footer>
-  © 2026 Burhan U Din Abdullah | Powering a Sustainable Future
+  © 2026 Burhan U Din Abdullah · Academic Research Portfolio
 </footer>
+
+<script>
+  gsap.utils.toArray(".event").forEach(el => {
+    gsap.to(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%"
+      },
+      opacity: 1,
+      y: 0,
+      duration: 0.8
+    });
+  });
+</script>
 
 </body>
 </html>
